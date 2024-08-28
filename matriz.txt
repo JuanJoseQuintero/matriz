@@ -1,0 +1,36 @@
+package com.mycompany.matriz;
+
+/**
+ *
+ * @author SCIS3-15
+ */
+import java.util.Random;
+import java.util.Scanner;
+public class Matriz {
+
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        System.out.println("ingrese la talla");
+        int talla=sc.nextInt();
+             long inicio = System.currentTimeMillis();
+        int [][] matriz = new int [talla][talla];
+   Random azar = new Random(); 
+     for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                matriz[i][j] = azar.nextInt(100);}}
+        for (int i = 0; i < talla; i++) {
+    for (int j = 0; j < talla; j++) {
+        matriz[i][j] = i + j; 
+    }
+    
+}
+     for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                System.out.print(matriz[i][j] + "\t");
+            }
+            System.out.println();
+        }
+        long fin = System.currentTimeMillis();
+        long total = fin - inicio;
+    }
+}
